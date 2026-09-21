@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 14:29:32 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/21 15:59:48 by gecasas          ###   ########.fr       */
+/*   Created: 2026/09/21 18:40:06 by gecasas           #+#    #+#             */
+/*   Updated: 2026/09/21 19:23:45 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_isinstr(char c, char const *set)
 {
-	size_t	len;
-	int		i;
-	char	*str;
+	int	i;
 
-	len = ft_strlen(s1);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	while(set[i] != '/0')
 	{
-		str[i] = s1[i];
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (0);
+}
+
+char*	ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	int		i;
+	int		j;
+	int		start;
+
+	i = 0;
+	while (s1[i] != '/0')
+	{
+		if (ft_isinstr(s1[i], set))
+			i++;
+		
+	}
+	
 }

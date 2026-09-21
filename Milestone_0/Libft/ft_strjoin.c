@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 14:29:32 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/21 15:59:48 by gecasas          ###   ########.fr       */
+/*   Created: 2026/09/21 16:12:31 by gecasas           #+#    #+#             */
+/*   Updated: 2026/09/21 18:40:57 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	i;
+	size_t	j;
 	size_t	len;
-	int		i;
 	char	*str;
 
-	len = ft_strlen(s1);
-	str = malloc(sizeof(char) * (len + 1));
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc((sizeof (char) * len) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -28,6 +29,20 @@ char	*ft_strdup(const char *s1)
 		str[i] = s1[i];
 		i++;
 	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
 	str[i] = '\0';
 	return (str);
 }
+
+
+/*int	main(int argc, char **argv)
+{
+	printf("%s", ft_strjoin(argv[1], argv[2]));
+	return (0);
+}*/
