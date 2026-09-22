@@ -6,7 +6,7 @@
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:12:31 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/21 18:40:57 by gecasas          ###   ########.fr       */
+/*   Updated: 2026/09/22 17:48:39 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-
 
 /*int	main(int argc, char **argv)
 {
