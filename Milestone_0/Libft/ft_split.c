@@ -17,23 +17,17 @@ char	*ft_fill_word(char const *s, size_t start, size_t len);
 
 char	**ft_split(char const *s, char c)
 {
-	//creo doble array que debe devolver
 	char		**str;
 	size_t		start;
 	size_t		len;
 	int			new_w;
-	size_t			j;
+	size_t		j;
 
-	//cuento el número de palabras que tiene el array
 	if (!s)
 		return (NULL);
-
-	//reservo memoria para el array de arrays + 1 para NULL
-	str = malloc(sizeof (char*) * (ft_countwords(s, c) + 1));
+	str = malloc (sizeof (char *) * (ft_countwords(s, c) + 1));
 	if (!str)
 		return (NULL);
-
-	//lleno cada array con la palabra hasta encontrar caracter delimitador
 	start = 0;
 	new_w = 1;
 	j = 0;
@@ -64,7 +58,7 @@ size_t	ft_countwords(char const *s, char c)
 
 	new_word = 1;
 	words = 0;
-	i = 0; 
+	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -85,7 +79,7 @@ size_t	ft_countwords(char const *s, char c)
 char	*ft_fill_word(char const *s, size_t start, size_t len)
 {
 	char	*str;
-	size_t		i;
+	size_t	i;
 
 	str = malloc (sizeof (char) * len + 1);
 	if (!str)
@@ -101,12 +95,22 @@ char	*ft_fill_word(char const *s, size_t start, size_t len)
 	return (str);
 }
 
-/* void	ft_free(char const *s)
+void	ft_free(char **str)
 {
+	int	i;
 
-} */
+	if (!str)
+		return ;
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main(int argc, char **argv)
 {
@@ -120,7 +124,7 @@ int main(int argc, char **argv)
         resultado = ft_split(argv[1], argv[2][0]);
         if (!resultado)
         {
-            printf("Error: ft_split devolvió NULL (Fallo de memoria o entrada nula)\n");
+            printf("Error: ft_split devolvió NULL (Fallo de memoria)\n");
             return (1);
         }
         i = 0;
@@ -137,4 +141,4 @@ int main(int argc, char **argv)
         printf("Uso correcto: ./a.out \"cadena que quieres dividir\" \"c\"\n");
     }
     return (0);
-}
+} */
