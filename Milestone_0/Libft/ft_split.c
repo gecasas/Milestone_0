@@ -12,45 +12,24 @@
 
 #include "libft.h"
 
-size_t	ft_countwords(char const *s, char c);
-char	*ft_fill_word(char const *s, size_t start, size_t len);
+static size_t	ft_countwords(char const *s, char c);
+static void		*ft_free(char **str);
+static char		**ft_fill_split(char const *s, char c, char **str);
 
 char	**ft_split(char const *s, char c)
 {
 	char		**str;
-	size_t		start;
-	size_t		len;
-	int			new_w;
-	size_t		j;
 
 	if (!s)
 		return (NULL);
-	str = malloc (sizeof (char *) * (ft_countwords(s, c) + 1));
+	str = ft_calloc(ft_countwords(s, c) + 1, sizeof (char *));
 	if (!str)
-		return (NULL);
-	start = 0;
-	new_w = 1;
-	j = 0;
-	while (j < ft_countwords(s, c))
-	{
-		len = 0;
-		if (new_w == 1 && s[start] != c)
-		{
-			while (s[start + len] != c && s[start + len] != '\0')
-				len++;
-			str[j] = ft_fill_word(s, start, len);
-			j++;
-			new_w = 0;
-		}
-		else if (new_w == 0 && s[start] == c)
-			new_w = 1;
-		start++;
-	}
-	str[j] = NULL;
+		return (ft_free(str));
+	str = ft_fill_split(s, c, str);
 	return (str);
 }
 
-size_t	ft_countwords(char const *s, char c)
+static size_t	ft_countwords(char const *s, char c)
 {
 	size_t	words;
 	int		new_word;
@@ -76,31 +55,12 @@ size_t	ft_countwords(char const *s, char c)
 	return (words);
 }
 
-char	*ft_fill_word(char const *s, size_t start, size_t len)
-{
-	char	*str;
-	size_t	i;
-
-	str = malloc (sizeof (char) * len + 1);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		str[i] = s[start];
-		i++;
-		start++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-void	ft_free(char **str)
+static void	*ft_free(char **str)
 {
 	int	i;
 
 	if (!str)
-		return ;
+		return (NULL);
 	i = 0;
 	while (str[i] != NULL)
 	{
@@ -108,6 +68,35 @@ void	ft_free(char **str)
 		i++;
 	}
 	free(str);
+	return (NULL);
+}
+
+static char	**ft_fill_split(const char *s, char c, char **str)
+{
+	size_t		start;
+	size_t		len;
+	size_t		j;
+
+	start = 0;
+	len = 0;
+	j = 0;
+	while (s[start] != '\0')
+	{
+		len = 0;
+		if (s[start] == c)
+			start++;
+		else
+		{
+			while (s[start + len] != c && s[start + len] != '\0')
+				len++;
+			str[j] = ft_substr(s, start, len);
+			if (!str[j])
+				return (ft_free(str));
+			j++;
+			start = start + len;
+		}
+	}
+	return (str);
 }
 
 /*#include <stdio.h>
@@ -141,4 +130,5 @@ int main(int argc, char **argv)
         printf("Uso correcto: ./a.out \"cadena que quieres dividir\" \"c\"\n");
     }
     return (0);
-} */
+} 
+*/
