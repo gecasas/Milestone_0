@@ -6,7 +6,7 @@
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 16:18:09 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/25 17:04:42 by gecasas          ###   ########.fr       */
+/*   Updated: 2026/09/25 17:42:04 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 	void	*f_tmp;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (NULL);
 	new_lst = NULL;
 	while (lst != NULL)
@@ -27,8 +27,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		node = ft_lstnew(f_tmp);
 		if (!node)
 		{
-			ft_lstclear(&new_lst, del);
-			del (f_tmp);
+			if (del)
+			{
+				ft_lstclear(&new_lst, del);
+				del (f_tmp);
+			}
 			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, node);
