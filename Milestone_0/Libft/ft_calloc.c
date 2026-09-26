@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates memory for an array and initializes all bytes to zero. */
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*str;

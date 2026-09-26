@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Checks if the character is alphabetic. */
+
 int	ft_isalpha(int c)
 {
 	if (c >= 65 && c <= 90)

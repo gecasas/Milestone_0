@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Duplicates a string, allocating memory for the new copy. */
+
 char	*ft_strdup(const char *s1)
 {
 	size_t	len;

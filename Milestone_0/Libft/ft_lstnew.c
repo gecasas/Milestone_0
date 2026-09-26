@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns a new node with the given content. */
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*tmp;

@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns a new string concatenating 's1' and 's2'. */
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

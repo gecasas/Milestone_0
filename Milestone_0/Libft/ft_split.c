@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns an array of strings obtained by splitting 's' using 'c' as delimiter. */
+
 static size_t	ft_countwords(char const *s, char c);
 static void		*ft_free(char **str);
 static char		**ft_fill_split(char const *s, char c, char **str);
@@ -98,37 +100,3 @@ static char	**ft_fill_split(const char *s, char c, char **str)
 	}
 	return (str);
 }
-
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-    char    **resultado;
-    int     i;
-    if (argc == 3)
-    {
-        printf("Cadena original recibida: %s\n", argv[1]);
-        printf("Carácter delimitador: '%c'\n", argv[2][0]);
-        printf("----------------------------------\n");
-        resultado = ft_split(argv[1], argv[2][0]);
-        if (!resultado)
-        {
-            printf("Error: ft_split devolvió NULL (Fallo de memoria)\n");
-            return (1);
-        }
-        i = 0;
-        while (resultado[i] != NULL)
-        {
-            printf("Array [%d]: %s\n", i, resultado[i]);
-            i++;
-        }
-        printf("Array [%d]: NULL\n", i);
-    }
-    else
-    {
-        printf("Error de argumentos.\n");
-        printf("Uso correcto: ./a.out \"cadena que quieres dividir\" \"c\"\n");
-    }
-    return (0);
-} 
-*/

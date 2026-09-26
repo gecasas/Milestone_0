@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Copies a string to a specific size, guaranteeing NUL-termination. */
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

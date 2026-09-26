@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Concatenates two strings to a specific size, guaranteeing NUL-termination. */
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	lens;

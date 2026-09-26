@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Frees the memory of the node's content and the node itself. */
+
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)

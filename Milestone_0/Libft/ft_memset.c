@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Fills a block of memory with a specific byte value. */
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;

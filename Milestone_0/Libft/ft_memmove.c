@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Copies n bytes from src to dst, safely handling overlapping memory. */
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;

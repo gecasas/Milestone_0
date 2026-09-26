@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns a substring from the string 's'. */
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;

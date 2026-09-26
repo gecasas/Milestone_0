@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns a copy of 's1' with characters from 'set' removed from both ends. */
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	end;

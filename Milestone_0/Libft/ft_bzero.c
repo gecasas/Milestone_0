@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Sets the first n bytes of the memory area to zero. */
+
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);

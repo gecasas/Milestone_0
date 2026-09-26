@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Allocates and returns a string representing the given integer. */
+
 static int	ft_count(long n);
 
 char	*ft_itoa(int n)

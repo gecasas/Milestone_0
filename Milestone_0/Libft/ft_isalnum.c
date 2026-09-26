@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+/* Checks if the character is alphanumeric. */
+
 int	ft_isalnum(int c)
 {
 	if (c >= 65 && c <= 90)

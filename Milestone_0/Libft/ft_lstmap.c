@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* Iterates the list, applying 'f' to each node's content to create a new list. */
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
