@@ -41,9 +41,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-
-/*int	main(int argc, char **argv)
-{
-	printf("%s", ft_strjoin(argv[1], argv[2]));
-	return (0);
-}*/

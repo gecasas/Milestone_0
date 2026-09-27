@@ -6,13 +6,14 @@
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 16:18:09 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/25 17:42:04 by gecasas          ###   ########.fr       */
+/*   Updated: 2026/09/27 12:49:01 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Iterates the list, applying 'f' to each node's content to create a new list. */
+/* Iterates the list, applying 'f' to each node's
+content to create a new list. */
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

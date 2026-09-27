@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-/* Allocates and returns a copy of 's1' with characters from 'set' removed from both ends. */
+/* Allocates and returns a copy of 's1' with characters from
+'set' removed from both ends. */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -29,18 +30,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start + 1));
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-    char const *str = "-++-hola+mundo+---++-";
-    char const *set = "+-";
-    
-	char *res = ft_strtrim(str, set);
-    printf("Resultado: '%s'\n", res);
-    
-    free(res); // Recuerda liberar la memoria reservada con malloc
-    return 0;
-}
-*/

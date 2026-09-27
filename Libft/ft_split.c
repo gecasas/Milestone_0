@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-/* Allocates and returns an array of strings obtained by splitting 's' using 'c' as delimiter. */
+/* Allocates and returns an array of strings obtained by
+splitting 's' using 'c' as delimiter. */
 
 static size_t	ft_countwords(char const *s, char c);
 static void		*ft_free(char **str);

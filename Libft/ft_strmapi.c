@@ -6,13 +6,14 @@
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 20:26:14 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/23 20:35:18 by gecasas          ###   ########.fr       */
+/*   Updated: 2026/09/27 12:50:07 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Applies a function to each character of a string to create a newly allocated string. */
+/* Applies a function to each character of a string to create
+a newly allocated string. */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

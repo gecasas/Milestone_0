@@ -6,13 +6,14 @@
 /*   By: gecasas <gecasas@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 08:57:17 by gecasas           #+#    #+#             */
-/*   Updated: 2026/09/24 08:57:17 by gecasas          ###   ########.fr       */
+/*   Updated: 2026/09/27 12:49:14 by gecasas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Outputs the string 's' to the given file descriptor, followed by a newline. */
+/* Outputs the string 's' to the given file descriptor,
+followed by a newline. */
 
 void	ft_putendl_fd(char *s, int fd)
 {
